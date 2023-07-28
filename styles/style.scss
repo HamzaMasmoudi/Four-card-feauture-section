@@ -1,0 +1,176 @@
+/* 
+GLOBAL CODE
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+
+$Very-Dark-Blue: hsl(234, 12%, 34%);
+$Grayish-Blue: hsl(229, 6%, 66%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  background-color: $Very-Light-Gray;
+  display: flex;
+}
+
+#cyan-card {
+  grid-area: cyanbox;
+  margin-top: 14.5rem;
+  margin-left: 2rem;
+  box-shadow: 0px -3px 0px $Cyan, 3px 3px 20px rgb(213, 213, 213);
+}
+#red-card {
+  grid-area: redbox;
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  box-shadow: 0px -3px 0px $Red, 3px 3px 20px rgb(213, 213, 213);
+}
+#blue-card {
+  grid-area: bluebox;
+  margin-top: 14.5rem;
+  margin-left: 1.3rem;
+  box-shadow: 0px -3px 0px $Blue, 3px 3px 20px rgb(213, 213, 213);
+}
+
+#yellow-card {
+  grid-area: yellowbox;
+  margin-bottom: 7rem;
+  margin-left: 1.6rem;
+  box-shadow: 0px -3px 0px $Orange, 3px 3px 20px rgb(213, 213, 213);
+}
+
+/*
+MAIN CODE
+
+*/
+
+main {
+  width: 115rem;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 7.7rem;
+
+    h1 {
+      font-size: 3.65rem;
+      font-weight: 200;
+    }
+    h2 {
+      font-size: 3.65rem;
+      font-weight: 600;
+      color: $Very-Dark-Blue;
+    }
+    p {
+      margin: 1.2rem 31.2rem 0rem 31.2rem;
+      color: $Grayish-Blue;
+    }
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "cyanbox redbox bluebox"
+      "cyanbox yellowbox bluebox";
+    grid-row-gap: 2rem;
+
+    .card {
+      width: 35rem;
+      height: 25rem;
+      background-color: white;
+      border-radius: 0.5rem;
+
+      h3 {
+        padding: 3.1rem 0rem 0.6rem 3.3rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $Very-Dark-Blue;
+      }
+      p {
+        padding: 0rem 4rem 0rem 3.3rem;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        color: $Grayish-Blue;
+      }
+
+      .image {
+        display: flex;
+        justify-content: flex-end;
+        margin: 3.8rem 3rem 0px 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1264px) {
+  main {
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 1208px) {
+  main {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 1166px) {
+  main {
+    margin-left: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 1155px) {
+  main {
+    margin-left: 0rem;
+  }
+}
+
+@media screen and (max-width: 1132px) {
+  main {
+    display: flex;
+    flex-direction: column;
+
+    .text {
+      p {
+        margin: 1.2rem 0rem;
+        padding: 0rem 10rem;
+      }
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+
+      #cyan-card,
+      #red-card,
+      #blue-card,
+      #yellow-card {
+        margin: 0.5rem 0rem;
+      }
+    }
+  }
+}
